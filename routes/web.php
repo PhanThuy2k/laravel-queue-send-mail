@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SendMailController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('email/send',[SendMailController::class,'sendMail']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
